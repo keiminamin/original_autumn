@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Board</title>
+</head>
+<body>
+  <nav>
+    <div>
+      <div>
+      <a href="/">Share Board</a>
+      <ul>
+      <% if !current_user.nil? %>
+      <li>こんにちは、<%= current_user.name  %>さん</li><br>
+      <li>ただいまのポイント <%= current_user.point %> 点</li>
+      <% unless current_user.qr_img.empty? %>
+        <img src="<%= current_user.qr_img %> " height ="100px"> <br>
+      <% end %>
+
+      <% if !current_group.nil? %>
+      <li>ようこそ,
+      <%= current_group.group_name  %>グループへ</li><br>
+      <li><a href="/groupout">グループから退出</a></li>
+
+
+
+      <a href="/post" >依頼</a><br>
+
+      <a href= "/board">案件ページ</a>
+      <% else %>
+      <a href ="/groupin">グループへログイン</a>
+      <a href ="/groupup">グループを作成</a>
+
+
+      <% end %>
+
+
+
+
+      <li><a href="/signout">ログアウト</a></li>
+
+      <% else %>
+
+
+        <li><a href="/signin">ログイン</li>
+        <li><a href="/signup">サインアップ</a></li>
+        <% end %>
+      </ul>
+      </div>
+    </div>
+  </nav>
+<%= yield %>
+</body>
+</html>

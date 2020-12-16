@@ -1,0 +1,44 @@
+<% if !current_user.nil? %>
+  <% if !current_group.nil? %>
+	<% @contents.each do |content|%>
+	  <% if !content.custome_id.nil? %>
+
+    <% if content.user.id == current_user.id %>
+
+      <h1><%= content.board_title %></h1>
+			<h2>取り組み中の案件</h2>
+      <% unless current_user.qr_img.empty? %>
+        <img src="<%= content.qr_img %> " height ="100px"> <br>
+      <% end %>
+			<p><%= content.board_content%></p>
+
+			<% unless content.complete?%>
+        <form action="/<%= content.id %>/done" method="post">
+				  <input type="submit" value="完了">
+				</form>
+			<% else %>
+			  <div>評価まち</div>
+			<% end %>
+    <% end %>
+		<% if content.custome_id == current_user.id %>
+
+      <h1><%= content.board_title %></h1>
+			<h2><%= content.user.name  %>さんの依頼です</h2>
+      <% unless current_user.qr_img.empty? %>
+        <img src="<%= content.qr_img %> " height ="100px"> <br>
+      <% end %>
+			<p><%= content.board_content%></p>
+			<% unless content.complete?%>
+        <div>ただいま作業中です</div>
+			<% else %>
+　　　　　<form action="/<%=content.id%>/evaluate" method="post">
+  <h3> 良い 3  普通 2 悪い 1</h3>
+  <input type="number" value= " 5" min="1" max= "3" >
+        <input type="submit" value="評価" name ="evaluation">
+        </form>
+			<% end %>
+    <% end %>
+		<% end %>
+  <% end %>
+	<% end %>
+<% end %>
