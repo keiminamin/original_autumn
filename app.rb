@@ -175,13 +175,11 @@ end
 
 post '/:id/evaluate' do
   content = Board.find(params[:id])
-  userid = Board.find_by(user_id: params[:user_id])
-  current_user.point == current_user.point - 1
-  current_user.save!
-  userid.point == userid.point + 1
-
-  userid.evaluation = params[:evaluation]
-  userid.save!
+  puts current_user.point - 1
+  current_user.update_attribute(:point, current_user.point - 1 )
+  content.user.update_attribute(:point, content.user.point + 1)
+  content.user.evaluation = params[:evaluation]
+  content.save!
   content.destroy
   redirect '/'
 end
