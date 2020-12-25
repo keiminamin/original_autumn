@@ -99,13 +99,14 @@ post '/groupup' do
 
   if group.persisted?
     Usergroup.create({user_id: current_user.id,group_id: group.id})
+    puts "a"
   end
 
   puts "aaaaa"
   redirect '/group/:id'
 end
 get '/group/:id' do
-  @group = Usergroup.find(params [:group_id])
+  @group = Group.find_by(params [:id])
 
   erb :group
 end
