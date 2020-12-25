@@ -18,8 +18,9 @@
       <% unless current_user.qr_img.empty? %>
         <img src="<%= current_user.qr_img %> " height ="100px"> <br>
       <% end %>
-
+　　　　
       <% if !current_group.nil? %>
+      <nav>
       <li>ようこそ,
       <%= current_group.group_name  %>グループへ</li><br>
       <li><a href="/groupout">グループから退出</a></li>
@@ -41,17 +42,7 @@
 
       <li><a href="/signout">ログアウト</a></li>
 
-      <% else %>
 
-
-
-      <div class="home">
-        <div class="links">
-        <a class="link" href="/signin">Login</a>
-        <a class="link" href="/signup">Signup</a>
-        <a class="link" href="/about">About</a>
-        </div>
-      </div>
         <% end %>
       </ul>
 

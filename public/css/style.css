@@ -74,3 +74,95 @@
  a {
    text-decoration: none;
  }
+
+ .input-text {
+   display: block;
+   width: 70%;
+   height: 36px;
+   border-width: 0 0 2px 0;
+   border-color: #4D5359;
+   background: #fafafa;
+   font-family: Lusitana, serif;
+   font-size: 18px;
+   line-height: 26px;
+   font-weight: 400;
+   margin: 0 auto;
+   margin-top: 5vh;
+ }
+
+ .title {
+   text-align: center;
+   color: #4D5359;
+   margin-top: 5vh;
+
+ }
+
+ .title_in {
+   text-align: center;
+   color: #4D5359;
+   margin-top: 20vh;
+
+ }
+
+ .submit-btn {
+   display: block;
+   margin: 0 auto;
+   background-color: #4D5359;
+   color: #fafafa;
+   font-family: Raleway, sans-serif;
+   margin-top: 14vh;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: 16px;
+   line-height: 24px;
+   padding: 8px 16px;
+   border: none;
+   cursor: pointer;
+   text-align: center;
+ }
+
+
+
+
+ label {
+
+   background: #39f;
+   color: white;
+   font-size: 0.8rem;
+   padding: 8px 10px;
+   border-radius: 4px;
+   display: inline-block;
+
+   cursor: pointer;
+   margin-right: 8px;
+   margin-top: 5vh;
+   margin-left: 15vw;
+ }
+
+ label input {
+   display: none;
+ }
+
+ .file {
+   position: relative;
+   margin: 8px 0 0 -14px;
+ }
+
+ .file::before {
+   content: “添付ファイル：”;
+   position: absolute;
+   background: #fff;
+   width: 110px;
+   height: 26px;
+   line-height: 1.8;
+   text-align: right;
+
+ }
+
+
+ /* label:after {
+   content: "選択されていません";
+   color: #333;
+   font-size: 14px;
+   height: 20px;
+ } */

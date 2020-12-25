@@ -98,11 +98,11 @@ post '/groupup' do
   group = Group.create(group_name: params[:group_name],password: params[:password] )
 
   if group.persisted?
-    session[:group] = group.id
+    Usergroup.create({user_id: current_user.id})
   end
 
   puts "aaaaa"
-  redirect '/'
+  redirect '/group/:id'
 end
 
 get '/groupin' do
@@ -115,12 +115,20 @@ post '/groupin' do
 
   if group && group.authenticate(params[:password])
 
-    session[:group] = group.id
+    session[:user] = user.id
+
 
   end
 
-  redirect '/'
+  redirect '/group/:id'
 end
+
+get '/group/:id' do
+  group = Group.find(params [:id])
+
+  erb :group
+end
+
 
 get '/groupout' do
   session[:group] = nil
