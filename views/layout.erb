@@ -7,46 +7,47 @@
   <title>Share Board</title>
 </head>
 <body>
-  <nav>
+
+      <% if !current_user.nil? %>
+      <nav>
 
 
       <ul>
-      <% if !current_user.nil? %>
-       <a href="/">Share Board</a>
-      <li>こんにちは、<%= current_user.name  %>さん</li><br>
-      <li>ただいまのポイント <%= current_user.point %> 点</li>
+      <div>
+      <input id="nav-input" type="checkbox" class="nav-hidden">
+      <label class=humb id="menubtn" for="nav-input"><img src="/img/humbuger.png" alt="menu"></label>
+    <nav class="hum_nav">
+      <ul>
+      <li ><a class="group4" href="/">Share Board</a></li><br>
       <% unless current_user.qr_img.empty? %>
-        <img src="<%= current_user.qr_img %> " height ="100px"> <br>
+
+        <img class="icon" src="<%= current_user.qr_img %> " height ="100px">
       <% end %>
-　　　　
-      <% if !current_group.nil? %>
-      <nav>
-      <li>ようこそ,
-      <%= current_group.group_name  %>グループへ</li><br>
-      <li><a href="/groupout">グループから退出</a></li>
+      <div class="group3">
+    <div class= "group1">
+      <li class="group">こんにちは、<%= current_user.name  %>さん</li>
+      </div>
+      <div class= "group1">
+      <li class="group">ただいまのポイント <%= current_user.point %> 点</li>
+      </div>
+      </div>
 
-
-
-      <a href="/post" >依頼</a><br>
-
-      <a href= "/board">案件ページ</a>
-      <% else %>
-      <a href ="/groupin">グループへログイン</a>
-      <a href ="/groupup">グループを作成</a>
-
-
-      <% end %>
-
-
-
-
-      <li><a href="/signout">ログアウト</a></li>
-
-
-        <% end %>
+      <div class= "groups">
+      <li ><a class="group1"href ="/groupin">グループへログイン</a></li>
+      </div>
+      <div class= "groups">
+      <li ><a class="group1" href ="/groupup">グループを作成</a></li>
+      </div>
+      <div class= "groups">
+      <li><a class="group1" href="/signout">ログアウト</a></li>
+      </div>
+      </ul>
+      </nav>
       </ul>
 
-  </nav>
+      </div>
+        <% end %>
+
 <%= yield %>
 </body>
 </html>

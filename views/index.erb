@@ -1,6 +1,14 @@
 <% if !current_user.nil? %>
-  <% if !current_group.nil? %>
+
+  <h1 class="mytitle">My page</h1>
+	<% @groups.each do |group|%>
+	<%# <% if group.usergroup.user_id == current_user.id  %> %>
+	 <%= @usergroup %>
+   <li><a href ="/group/<%= group.id %>"><%= group.group_name  %></a></li>
+	 <%# <% end %> %>
+	<% end %>
 	<% @contents.each do |content|%>
+	<h2 class="secondtitle">依頼リスト</h2>
 	  <% if !content.custome_id.nil? %>
 
     <% if content.user.id == current_user.id %>
@@ -38,10 +46,11 @@
         </form>
 			<% end %>
     <% end %>
-		<% end %>
+
   <% end %>
 	<% end %>
-	  <% else %>
+
+	   <% else %>
 
 
 

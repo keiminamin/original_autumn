@@ -28,6 +28,9 @@ end
 
 get '/' do
   @contents = Board.all.order('id desc')
+  @groups = Group.all.order( 'id desc')
+  # @usergroup = @groups.Usergroup.id
+  # @usergroups = Usergroup.all.order( 'id desc')
 
   erb :index
 end
@@ -100,13 +103,20 @@ post '/groupup' do
   if group.persisted?
     Usergroup.create({user_id: current_user.id,group_id: group.id})
     puts "a"
-  end
 
+    redirect "/group/#{group.id}"
+  end
+  redirect'/groupup'
   puts "aaaaa"
-  redirect '/group/:id'
+
 end
 get '/group/:id' do
-  @group = Group.find_by(params [:id])
+  @group = Group.find(params[:id])
+  @contents = Board.all.order('id desc')
+
+
+
+  # @group = Group.find(params[:id])
 
   erb :group
 end
@@ -125,42 +135,46 @@ post '/groupin' do
 
     Usergroup.create({user_id: current_user.id,group_id: group.id })
 
-
+  redirect "/group/#{group.id}"
   end
 
-  redirect '/group/:id'
+  redirect '/groupin'
 end
 
 
 
 
 get '/groupout' do
-  session[:group] = nil
+
   redirect '/'
 end
 
-get '/post' do
+get '/group/:id/post' do
+  @group = Group.find(params[:id])
   erb :post
 end
 
-post '/post' do
-    Board.create( {board_title: params[:board_title],board_content: params[:board_content],user_id: current_user.id, group_id:current_group.id})
+post '/group/:id/post' do
+  @group = Group.find(params[:id])
+    Board.create( {board_title: params[:board_title],board_content: params[:board_content],user_id: current_user.id, group_id:@group.id})
 
 
-  redirect '/board'
+  redirect "/group/#{@group.id}"
 end
 
-post '/board/:id/offer' do
-    board = Board.find(params[:id])
+post '/group/:id/:post_id/offer' do
+    @group = Group.find(params[:id])
+    board = Board.find(params[:post_id])
     board.custome_id = current_user.id
     board.qr_img    = current_user.qr_img
     board.save!
-    redirect '/'
+    redirect "/"
 
 end
 
-get '/board/:id/edit' do
-  @content = Board.find(params[:id])
+get '/group/:id/:post_id/edit' do
+  @group = Group.find(params[:id])
+  @content = Board.find(params[:post_id])
   erb :edit
 
 end

@@ -1,3 +1,32 @@
-<li>ようこそ,
-      <%= current_group.group_name  %>グループへ
-</li>
+
+
+      <li>ようこそ,
+      <%= @group.group_name  %>グループへ</li><br>
+      <li><a href="/groupout">グループから退出</a></li>
+
+
+
+      <a href="/group/<%= @group.id %>/post" >依頼</a><br>
+
+
+      <% @contents.each do |content|%>
+  <% if content.custome_id.nil? %>
+        <div>
+          <div>
+            <h1>件名 :<%= content.board_title %></h1>
+            <h2><%= content.user.name %>さん</h2>
+            <p><%= content.board_content %></p>
+  <% unless content.user.id == current_user.id %>
+            <form action="/group/<%= @group.id %>/<%= content.id %>/offer" method="post">
+            <input type="submit" value="申請">
+            </form>
+    <% else %>
+    <form action="/group/<%= @group.id %>/<%= content.id %>/edit">
+    <input type="submit" value="編集">
+    </form>
+  <% end %>
+          </div>
+
+        </div>
+        <% end %>
+  <% end %>

@@ -104,6 +104,20 @@
 
  }
 
+ .mytitle {
+   text-align: center;
+   font-size: 40px;
+   color: #4D5359;
+   height: 12vh;
+   padding: 12vh;
+
+ }
+
+ .secondtitle {
+   text-align: center;
+   color: #4D5359;
+ }
+
  .submit-btn {
    display: block;
    margin: 0 auto;
@@ -124,7 +138,7 @@
 
 
 
- label {
+ .qr {
 
    background: #39f;
    color: white;
@@ -139,9 +153,116 @@
    margin-left: 15vw;
  }
 
+ .humb {
+   background: none;
+   margin-left: 20vw;
+   margin-top: 9vh;
+ }
+
+ #menubtn {
+   z-index: 999;
+   /*追加*/
+   position: fixed;
+   /*追加*/
+ }
+
+ #menubtn img {
+   width: 100%;
+   max-width: 80px;
+ }
+
+ .w1000 {
+   max-width: 1000px;
+   margin: 0 auto;
+   position: relative;
+   /*追加*/
+   height: 100%;
+   /*追加*/
+ }
+
+ .hum_nav {
+   background-color: #1C5D99;
+   padding-left: 70vw;
+   padding-top: 5vh;
+   display: none;
+   position: absolute;
+   /*追加*/
+   width: 30%;
+   /*追加*/
+   height: 100%;
+
+   /*追加*/
+
+
+ }
+
+ .nav-hidden {
+   display: none;
+ }
+
+ #nav-input:checked~nav {
+   /*チェック入ってるとき ~ メニューが*/
+   display: block;
+   /*追加*/
+   animation: 1s fadeIn;
+   /*追加*/
+ }
+
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+
+   /*追加*/
+   to {
+     opacity: 1;
+   }
+
+   /*追加*/
+ }
+
+ .nav-hidden {
+   display: none;
+ }
+
+ .icon {
+   background: #fafafa;
+   float: left;
+   overflow: hidden;
+ }
+
+ .group {
+   color: #fafafa;
+   overflow: hidden;
+   height: 40px;
+   padding-left: 25px;
+   padding-top: 15px;
+
+ }
+
+ .group1 {
+   color: #fafafa;
+
+ }
+
+ .groups {
+   margin-top: 40px;
+   border-bottom: #fafafa solid 1px;
+   padding: 5px;
+   overflow: hidden;
+ }
+
+ .group4 {
+
+   color: #fafafa;
+ }
+
+
+
  label input {
    display: none;
  }
+
 
  .file {
    position: relative;
@@ -158,6 +279,8 @@
    text-align: right;
 
  }
+
+
 
 
  /* label:after {
