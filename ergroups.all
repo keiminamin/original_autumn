@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/lit_users/workspace/views/index.erb:7 self.__tilt_46989380675400:
+
+     [1;34m2[0m: 
+     [1;34m3[0m:   <h1 class="mytitle">My page</h1>
+     [1;34m4[0m: 	<% @groups.each do |group|%>
+     [1;34m5[0m: 	<%# <% if group.usergroup.user_id == current_user.id  %> %>
+     [1;34m6[0m: 	<%= group.usergroups.all %>
+ =>  [1;34m7[0m: 	 <% binding.pry %>
+     [1;34m8[0m:    <li><a href ="/group/<%= group.id %>"><%= group.group_name  %></a></li>
+     [1;34m9[0m: 	 <%# <% end %> %>
+    [1;34m10[0m: 	<% end %>
+    [1;34m11[0m: 	<% @contents.each do |content|%>
+    [1;34m12[0m: 	<h2 class="secondtitle">依頼リスト</h2>
+

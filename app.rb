@@ -4,7 +4,7 @@ require 'sinatra/reloader' if development?
 
 require 'sinatra/activerecord'
 require './models'
-
+require 'pry'
 
 
 enable :sessions
@@ -29,7 +29,7 @@ end
 get '/' do
   @contents = Board.all.order('id desc')
   @groups = Group.all.order( 'id desc')
-  # @usergroup = @groups.Usergroup.id
+
   # @usergroups = Usergroup.all.order( 'id desc')
 
   erb :index

@@ -1,12 +1,18 @@
 <% if !current_user.nil? %>
 
   <h1 class="mytitle">My page</h1>
+	<div class="group_links">
+	<h2 class="secondtitle">所属グループ</h2>
 	<% @groups.each do |group|%>
-	<%# <% if group.usergroup.user_id == current_user.id  %> %>
-	 <%= @usergroup %>
-   <li><a href ="/group/<%= group.id %>"><%= group.group_name  %></a></li>
-	 <%# <% end %> %>
+
+	 <% if group.usergroups.find_by(user_id: current_user.id).present?  %>
+
+  <div group10>
+   <li class="group_link"><a class ="jump" href ="/group/<%= group.id %>"><%= group.group_name  %></a>グループへ</li>
+	 </div>
+	 <% end %>
 	<% end %>
+	</div>
 	<% @contents.each do |content|%>
 	<h2 class="secondtitle">依頼リスト</h2>
 	  <% if !content.custome_id.nil? %>

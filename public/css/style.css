@@ -280,6 +280,27 @@
 
  }
 
+ .group_links {
+   height: 20vh;
+
+   overflow: hidden;
+
+ }
+
+ .group_link {
+   margin-top: 40px;
+   color: #4D5359;
+   float: left;
+   margin-left: 15vw;
+   transition: 0.3s;
+ }
+
+ .group_link:hover {
+
+   border-bottom: solid #5b99f4 1px;
+ }
+
+
 
 
 
