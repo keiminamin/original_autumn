@@ -29,12 +29,37 @@ end
 get '/' do
   @contents = Board.all.order('id desc')
   @groups = Group.all.order( 'id desc')
+  @chats = Chat.all.order('id desc')
 
   # @usergroups = Usergroup.all.order( 'id desc')
 
+  # returned_json["results"].map! do  |@content|
+  # content_info = Content.find_or_create_by(track_id: content)
+
+  # end
   erb :index
 end
 
+# post '/:id/like' do
+#   content = Board.find(params[:id])
+#   content.like = content.like + 1
+#   content.save!
+#   puts "a"
+#   content.like.to_s
+# end
+
+get  '/:id/chat' do
+  @content = Board.find(params[:id])
+  @chats = Chat.all.order('id desc')
+  @chats = Chat.all.order('id desc')
+  erb :chat
+end
+
+post '/:id/chat'  do
+    @content = Board.find(params[:id])
+    Chat.create({message: params[:message],board_id: @content.id , user_id: current_user.id})
+    redirect "/#{@content.id}/chat"
+end
 get '/board' do
 @contents = Board.all.order('id desc')
 
@@ -180,15 +205,16 @@ get '/group/:id/:post_id/edit' do
 end
 
 
-post  '/board/:id' do
-  content = Board.find(params[:id])
-  content.board_title = params[:board_title]
+post  '/group/:id/:post_id' do
+  @group = Group.find(params[:id])
+  @content = Board.find(params[:post_id])
+  @content.board_title = params[:board_title]
 
-  content.board_content = params[:board_content]
+  @content.board_content = params[:board_content]
 
-  content.save
+  @content.save
 
-  redirect '/board'
+  redirect "/group/#{@group.id}"
 
 end
 

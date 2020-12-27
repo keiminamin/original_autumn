@@ -1,9 +1,9 @@
-<form action="/board/<%=@content.id %>  " method="post">
+<form action="/group/<%=@group.id %>/<%= @content.id  %>  " method="post">
+<h1 class="mytitle">編集ページ</h1>
+<input class="input-text" type="text" name="board_title" placeholder="タイトル" value ="<%= @content.board_title %>"><br>
+<input class="input-text" type="text" name="board_content"placeholder="内容" value ="<%= @content.board_content %>"> <br>
 
-<input type="text" name="board_title" placeholder="タイトル" value ="<%= @content.board_title %>"><br>
-<input type="text" name="board_content"placeholder="内容" value ="<%= @content.board_content %>"> <br>
-
-<input type="submit" value="編集完了">
+<input class="submit-btn" type="submit" value="SUBMIT">
 
 
 </form>

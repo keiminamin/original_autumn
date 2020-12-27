@@ -1,32 +1,50 @@
 
 
-      <li>ようこそ,
-      <%= @group.group_name  %>グループへ</li><br>
-      <li><a href="/groupout">グループから退出</a></li>
+      <h1 class ="mytitle2">ようこそ,
+
+      <%= @group.group_name  %>グループへ</h1><br>
+      <div class="urls">
 
 
-
-      <a href="/group/<%= @group.id %>/post" >依頼</a><br>
-
+      <a class="url" href="/group/<%= @group.id %>/post" >依頼</a>
+       <a  class="url" href="/groupout">グループから退出</a>
+      </div>
 
       <% @contents.each do |content|%>
   <% if content.custome_id.nil? %>
+  <% if content.group_id == @group.id %>
+
         <div>
-          <div>
-            <h1>件名 :<%= content.board_title %></h1>
-            <h2><%= content.user.name %>さん</h2>
-            <p><%= content.board_content %></p>
-  <% unless content.user.id == current_user.id %>
+          <div class="content">
+          <% unless content.user.id == current_user.id %>
             <form action="/group/<%= @group.id %>/<%= content.id %>/offer" method="post">
-            <input type="submit" value="申請">
+            <input class="edit" id="edit" type="submit" value="申請">
+            <label class="head2" for="edit">
+    <div class="head">
+      <p class="pen">Share Board</p><br>
+      <p class="edit_name">Offer</p>
+    </div></label>
             </form>
     <% else %>
     <form action="/group/<%= @group.id %>/<%= content.id %>/edit">
-    <input type="submit" value="編集">
+    <input class="edit" id="edit" type="submit" value="編集">
+    <label class="head2" for="edit">
+    <div class="head">
+      <p class="pen">Share Board</p><br>
+      <p class="edit_name">Edit</p>
+    </div></label>
     </form>
   <% end %>
+   <p class="content_name"><%= content.user.name %>さん</p>
+      <div class="scription">
+            <h2 class="content_title"><%= content.board_title %></h2>
+
+
+            <p class="content_script"><%= content.board_content %></p>
+</div>
           </div>
 
         </div>
+        <% end %>
         <% end %>
   <% end %>

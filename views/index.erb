@@ -8,13 +8,14 @@
 	 <% if group.usergroups.find_by(user_id: current_user.id).present?  %>
 
   <div group10>
-   <li class="group_link"><a class ="jump" href ="/group/<%= group.id %>"><%= group.group_name  %></a>グループへ</li>
+   <li class="group_link"><a class ="jump" href ="/group/<%= group.id %>"><%= group.group_name  %>グループへ</a></li>
 	 </div>
 	 <% end %>
 	<% end %>
 	</div>
-	<% @contents.each do |content|%>
 	<h2 class="secondtitle">依頼リスト</h2>
+	<% @contents.each do |content|%>
+
 	  <% if !content.custome_id.nil? %>
 
     <% if content.user.id == current_user.id %>
@@ -33,6 +34,8 @@
 			<% else %>
 			  <div>評価まち</div>
 			<% end %>
+    <a href="/<%=content.id %>/chat">chatへ
+    </a>
     <% end %>
 		<% if content.custome_id == current_user.id %>
 
@@ -51,6 +54,8 @@
         <input type="submit" value="評価" name ="evaluation">
         </form>
 			<% end %>
+<a href="/<%=content.id %>/chat">chatへ
+    </a>
     <% end %>
 
   <% end %>

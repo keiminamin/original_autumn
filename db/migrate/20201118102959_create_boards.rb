@@ -8,6 +8,8 @@ class CreateBoards < ActiveRecord::Migration[5.2]
       t.boolean  :complete , default: false
       t.integer :custome_id
       t.string :qr_img
+      t.integer :track_id
+      t.integer :like, default: 0
       t.timestamps null: false
     end
   end

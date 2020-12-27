@@ -30,4 +30,10 @@ end
 class Board < ActiveRecord::Base
   belongs_to :user
   belongs_to :group
+  has_many :chats
+end
+
+class Chat < ActiveRecord::Base
+  belongs_to :board
+
 end

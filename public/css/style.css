@@ -113,6 +113,15 @@
 
  }
 
+ .mytitle2 {
+   text-align: center;
+   font-size: 40px;
+   color: #4D5359;
+   height: 10vh;
+   padding: 12vh;
+
+ }
+
  .secondtitle {
    text-align: center;
    color: #4D5359;
@@ -291,7 +300,7 @@
    margin-top: 40px;
    color: #4D5359;
    float: left;
-   margin-left: 15vw;
+   margin-left: 200px;
    transition: 0.3s;
  }
 
@@ -300,8 +309,135 @@
    border-bottom: solid #5b99f4 1px;
  }
 
+ .url {
+   display: inline-block;
+   margin-left: 30px;
+   font-size: 20px;
+ }
+
+ .urls {
+   display: flex;
+   margin-left: 38vw;
+ }
+
+ #edit {
+   display: none;
+ }
+
+ .content {
+   width: 230px;
+   height: 289px;
+
+   box-shadow: #4D5359 0px 1px 2px 0px;
+   margin-left: 50px;
+   margin-top: 20px;
+   overflow: hidden;
+   float: left;
+ }
+
+ .head {
+   width: 230px;
+   height: 230px;
 
 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 0.3s;
+
+ }
+
+ .head:hover {
+   background: #4D5359;
+
+   content: "編集";
+   color: red;
+ }
+
+ .head2:hover {
+   content: "編集";
+   color: #fafafa;
+
+
+ }
+
+ .pen {
+   font-family: Raleway,
+     sans-serif;
+   color: #4D5359;
+ }
+
+ .content_title {
+   font-family: Raleway,
+     sans-serif;
+   font-size: 13px;
+   padding: 10px;
+   width: 230px;
+   color: #4D5359;
+ }
+
+ .content_script {
+   font-family: Raleway,
+     sans-serif;
+   font-size: 5px;
+
+   margin-left: 5px;
+   color: #4D5359;
+   width: 230px;
+ }
+
+ .content_name {
+   font-family: Raleway,
+     sans-serif;
+   font-size: 15px;
+   color: #fafafa;
+   background: #4D5359;
+   /* opacity: 0.7; */
+   margin-top: -30px;
+   margin-left: 142px;
+   padding: 3px;
+   width: 80px;
+
+
+   border-radius: 5%;
+
+   text-align: center;
+   box-shadow: #4D5359 0px 1px 2px 0px;
+   /* position: relative;
+   left: 160px;
+   top: -10px; */
+ }
+
+ .edit_name {
+   color: #fafafa;
+
+   font-family: Raleway,
+     sans-serif;
+   font-size: 25px;
+
+ }
+
+ .scription {
+   /* position: absolute; */
+ }
+
+ .chat_jibun {
+   float: left;
+   overflow: hidden;
+   width: 50vw;
+ }
+
+ .chat_aite {
+   width: 50vw;
+   overflow: hidden;
+
+ }
+
+
+ .chats {
+   height: 100vh;
+   width: 100vw;
+ }
 
 
  /* label:after {
