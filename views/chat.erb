@@ -26,7 +26,7 @@
 </div>
 <div class="chat_aite">
 
-<% unless @chats.where(user_id: current_user.id).present? %>
+
 
   <% if @chats.find_by(user_id: @content.user_id).present? %>
     <h3 class="chat_name">
@@ -38,7 +38,7 @@
      <%= User.find_by(id: @content.custome_id).name %>
     </h3>
   <% end %>
-<% end %>
+
 
   <% @chats.each do |chat| %>
     <% unless chat.user_id == current_user.id %>
