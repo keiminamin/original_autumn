@@ -39,13 +39,13 @@
 				  <input id="complete" type="submit" value="完了">
           <label for="complete">
 					  <div class="comp">
-
+              Finish
 						</div>
 					</label>
 
 				</form>
 			<% else %>
-			  <p class="content_script2">評価まち</p>
+			  <p class="content_script2">確認まち</p>
 			<% end %>
     <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
@@ -55,6 +55,7 @@
 	  <div class="trade">
     <div class="trade_head">
       <h2 class="subject"><%= content.board_title %></h2>
+			<p class="content_script2" ><%= content.board_content%></p>
 			</div>
 
       <% unless current_user.qr_img.empty? %>
@@ -65,7 +66,7 @@
 			<div class="names">
 			<p class= ""><%= content.user.name%></p>
 			</div>
-			<p class="content_script2" ><%= content.board_content%></p>
+
 			<% unless content.complete?%>
         <p class="content_script2">ただいま作業中です</p>
 			<% else %>

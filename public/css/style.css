@@ -526,9 +526,19 @@
  }
 
  .comp {
+   text-align: center;
+   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+   color: #4D5359;
+   padding: 2px;
+   width: 20%;
+   height: 20%;
+   font-size: 12px;
+   margin: 0 auto;
+ }
+
+ .comp:hover {
    background: #5b99f4;
-   width: 30px;
-   height: 30px;
+   color: #fafafa;
  }
 
  #complete {
@@ -557,11 +567,11 @@
  .names {
 
    background: rgb(77, 83, 89, 50);
-   width: 40px;
+   width: 24%;
    text-align: center;
    color: #fafafa;
    border-radius: 5%;
-   margin-left: 81%;
+   margin-left: 74%;
    margin-top: -14%;
    font-size: 12px;
 
