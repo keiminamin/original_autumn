@@ -30,27 +30,22 @@
 
   <% if @chats.find_by(user_id: @content.user_id).present? %>
 
-    <% !if @chats.find_by(user_id: @content.custome_id).id == current_user.id%>
+
       <h3 class="chat_name">
       <%= User.find_by(id: @content.user_id).name %>
       </h3>
-      <% else %>
-      <h3 class="chat_name">
-      <%= User.find_by(id: @content.custome_id).name %>
-      </h3>
-      <% end %>
+
+
+
 
   <% elsif @chats.find_by(user_id: @content.custome_id).present? %>
 
-      <% !if @chats.find_by(user_id: @content.user_id).id == current_user.id%>
+
       <h3 class="chat_name">
       <%= User.find_by(id: @content.custome_id).name %>
       </h3>
-      <% else %>
-      <h3 class="chat_name">
-      <%= User.find_by(id: @content.user_id).name %>
-      </h3>
-      <% end %>
+
+
 
   <% end %>
 
