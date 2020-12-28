@@ -1,34 +1,66 @@
+
+
+
+<h1 class="mytitle">Share Chat</h1>
+<div class="messa">
+<form action="/<%= @content.id %>/chat" method = "post">
+  <input class="input-text" type="text" name="message" placeholder="message">
+  <input class="submit-btn" type="submit" value="Message">
+</form>
+</div>
 <div class="chats">
 <% unless @chats.nil? %>
-  <h3>自分</h3>
-  <h3>相手</h3>
+
+
+<div class="chat_jibun">
+<h3 class="chat_name"><%= current_user.name %></h3>
   <% @chats.each do |chat| %>
 
     <% if chat.user_id == current_user.id %>
-      <div class="chat_jibun">
 
-      <li><%= @content.chats.find_by(user_id: current_user.id).message %></li>
-      </div>
+
+      <li class="jibun"><p class="comment"><%= chat.message %></p></li>
+
     <% end %>
+  <% end %>
+</div>
+<div class="chat_aite">
+
+<% unless @chats.where(user_id: current_user.id).present? %>
+
+  <% if @chats.find_by(user_id: @content.user_id).present? %>
+    <h3 class="chat_name">
+    <%= User.find_by(id: @content.user_id).name%></h3>
+
+
+  <% elsif @chats.find_by(user_id: @content.custome_id).present? %>
+    <h3 class="chat_name">
+     <%= User.find_by(id: @content.custome_id).name %>
+    </h3>
+  <% end %>
+<% end %>
+
+  <% @chats.each do |chat| %>
     <% unless chat.user_id == current_user.id %>
       <% if chat.user_id == @content.user_id %>
-        <div class="chat_aite">
 
-          <li><%= @content.chats.find_by(user_id: @content.user_id).message %></li>
-        </div>
+
+          <li class="aite"> <p class="comment"><%= chat.message %></p></li>
+
+
+
       <% elsif chat.user_id == @content.custome_id %>
-        <div class="chat_aite">
 
 
-          <li><%= @chats.find_by(user_id: @content.custome_id).message %></li>
-        </div>
+
+          <li class= "aite"><p class="comment"><%= chat.message %> </p></li>
+
+
+
+
       <% end %>
     <% end %>
   <% end %>
+</div>
 <% end %>
 </div>
-
-<form action="/<%= @content.id %>/chat" method = "post">
-  <input type="text" name="message">
-  <input type="submit" value="Comment">
-</form>

@@ -5,8 +5,11 @@
  }
 
  body {
-   background-color: #fafafa
+   background-color: #fafafa;
+
  }
+
+
 
  .back {
    display: flex;
@@ -86,8 +89,28 @@
    font-size: 18px;
    line-height: 26px;
    font-weight: 400;
+
+   margin-top: 5vh;
+ }
+
+ .input-text {
+   display: block;
+   width: 50%;
+   height: 36px;
+   border-width: 0 0 2px 0;
+   border-color: #4D5359;
+   background: #fafafa;
+   font-family: Lusitana, serif;
+   font-size: 18px;
+   line-height: 26px;
+   font-weight: 400;
    margin: 0 auto;
    margin-top: 5vh;
+ }
+
+ .messa {
+   width: 50vw;
+   float: left;
  }
 
  .title {
@@ -121,6 +144,8 @@
    padding: 12vh;
 
  }
+
+
 
  .secondtitle {
    text-align: center;
@@ -328,7 +353,8 @@
    width: 230px;
    height: 289px;
 
-   box-shadow: #4D5359 0px 1px 2px 0px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+     rgba(0, 0, 0, 0.22) 0px 10px 10px;
    margin-left: 50px;
    margin-top: 20px;
    overflow: hidden;
@@ -346,6 +372,7 @@
    transition: 0.3s;
 
  }
+
 
  .head:hover {
    background: #4D5359;
@@ -386,6 +413,18 @@
    width: 230px;
  }
 
+ .content_script2 {
+   font-family: Raleway,
+     sans-serif;
+   font-size: 12px;
+
+
+   color: #4D5359;
+   text-align: center;
+   padding-top: 14px;
+
+ }
+
  .content_name {
    font-family: Raleway,
      sans-serif;
@@ -402,7 +441,7 @@
    border-radius: 5%;
 
    text-align: center;
-   box-shadow: #4D5359 0px 1px 2px 0px;
+   box-shadow: #4D5359 0px 25px 50px -12px;
    /* position: relative;
    left: 160px;
    top: -10px; */
@@ -436,9 +475,176 @@
 
  .chats {
    height: 100vh;
-   width: 100vw;
+   width: 50vw;
  }
 
+ .trade {
+   width: 230px;
+
+
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+   margin-left: 50px;
+   margin-top: 30px;
+
+   float: left;
+   margin-bottom: 100px;
+   padding-bottom: 5px;
+   padding-left: 5px;
+ }
+
+ .trade_head {
+   width: 230px;
+   height: 230px;
+   padding: 5px;
+
+   margin-top: 0;
+ }
+
+ .subject {
+   color: #4D5359;
+   font-size: 20px;
+   text-align: center;
+   padding-top: 50%;
+ }
+
+ .subject2 {
+   color: #4D5359;
+   font-size: 20px;
+   padding-top: 75px;
+   text-align: center;
+ }
+
+ .line {
+   width: 50px;
+   height: 50px;
+   /* background: rgb(77, 83, 89, 50);
+
+   */
+   margin-top: -150px;
+ }
+
+ .comp {
+   background: #5b99f4;
+   width: 30px;
+   height: 30px;
+ }
+
+ #complete {
+   display: none;
+ }
+
+ .chat_link {
+   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+   padding: 5px;
+   margin-left: 180px;
+   transition: 0.2s;
+
+ }
+
+ .chat_link:hover {
+   background: #5b99f4;
+   color: #fafafa;
+
+
+ }
+
+ .images {}
+
+ .names {
+
+   background: rgb(77, 83, 89, 50);
+   width: 40px;
+   text-align: center;
+   color: #fafafa;
+   border-radius: 5%;
+   margin-left: 81%;
+   margin-top: -14%;
+   font-size: 12px;
+
+
+ }
+
+ #confirm {
+   display: none;
+ }
+
+ .confirm {
+   text-align: center;
+   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+   color: #4D5359;
+   padding: 2px;
+   width: 20%;
+   height: 20%;
+   font-size: 12px;
+   margin: 0 auto;
+
+
+
+ }
+
+ .confirm:hover {
+   background: #5b99f4;
+   color: #fafafa;
+ }
+
+ .jibun {
+   background-image: url("/img/chat.png");
+   height: 10vh;
+   background-size: cover;
+   width: 30vh;
+   text-align: center;
+   color: #4D5359;
+   margin: 0 auto;
+   margin-bottom: 10vh;
+   padding: 2px;
+ }
+
+ .comment {
+
+   font-size: 15px;
+   padding-top: 22px;
+ }
+
+ .aite {
+   background-image: url("/img/chat.png");
+   height: 10vh;
+   background-size: cover;
+   width: 30vh;
+   text-align: center;
+   color: #4D5359;
+   margin: 0 auto;
+   margin-bottom: 10vh;
+   padding: 2px;
+
+ }
+
+ .chat_name {
+   text-align: center;
+   color: #4D5359;
+
+ }
+
+ .chat_aite {
+   width: 25vw;
+   margin: 20px;
+
+ }
+
+ .chat_jibun {
+   width: 25vw;
+   margin: 20px;
+
+ }
+
+ .chats {
+   display: flex;
+   justify-content: center;
+   margin-top: 5vh;
+ }
 
  /* label:after {
    content: "選択されていません";

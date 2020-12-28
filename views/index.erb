@@ -14,51 +14,78 @@
 	<% end %>
 	</div>
 	<h2 class="secondtitle">依頼リスト</h2>
+
 	<% @contents.each do |content|%>
 
 	  <% if !content.custome_id.nil? %>
 
     <% if content.user.id == current_user.id %>
+		<div class="trade">
+　　  <div class="trade_head">
+      <h2 class="subject2"><%= content.board_title %></h2>
+				<p class="content_script2"><%= content.board_content%></p>
+　    </div>
 
-      <h1><%= content.board_title %></h1>
-			<h2>取り組み中の案件</h2>
       <% unless current_user.qr_img.empty? %>
-        <img src="<%= content.qr_img %> " height ="100px"> <br>
+			<div class="images">
+        <img class="line" src="<%= content.qr_img %> " height ="100px">
+			</div>
       <% end %>
-			<p><%= content.board_content%></p>
-
+      <div class="names">
+			  <p class=><%= content.user.name %></p>
+      </div>
 			<% unless content.complete?%>
         <form action="/<%= content.id %>/done" method="post">
-				  <input type="submit" value="完了">
+				  <input id="complete" type="submit" value="完了">
+          <label for="complete">
+					  <div class="comp">
+
+						</div>
+					</label>
+
 				</form>
 			<% else %>
-			  <div>評価まち</div>
+			  <p class="content_script2">評価まち</p>
 			<% end %>
-    <a href="/<%=content.id %>/chat">chatへ
+    <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
+		</div>
     <% end %>
 		<% if content.custome_id == current_user.id %>
+	  <div class="trade">
+    <div class="trade_head">
+      <h2 class="subject"><%= content.board_title %></h2>
+			</div>
 
-      <h1><%= content.board_title %></h1>
-			<h2><%= content.user.name  %>さんの依頼です</h2>
       <% unless current_user.qr_img.empty? %>
-        <img src="<%= content.qr_img %> " height ="100px"> <br>
+			<div class="images">
+        <img class="line" src="<%= content.qr_img %> " height ="100px"> <br>
+			</div>
       <% end %>
-			<p><%= content.board_content%></p>
+			<div class="names">
+			<p class= ""><%= content.user.name%></p>
+			</div>
+			<p class="content_script2" ><%= content.board_content%></p>
 			<% unless content.complete?%>
-        <div>ただいま作業中です</div>
+        <p class="content_script2">ただいま作業中です</p>
 			<% else %>
 　　　　　<form action="/<%=content.id%>/evaluate" method="post">
-  <h3> 良い 3  普通 2 悪い 1</h3>
-  <input type="number" value= " 5" min="1" max= "3" >
-        <input type="submit" value="評価" name ="evaluation">
+
+        <input id="confirm" type="submit" value="Confirm" name ="evaluation">
+				<label for="confirm">
+				  <div class="confirm">
+					  confirm
+					</div>
+				</label>
         </form>
 			<% end %>
-<a href="/<%=content.id %>/chat">chatへ
+<a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
+		</div>
     <% end %>
 
   <% end %>
+
 	<% end %>
 
 	   <% else %>

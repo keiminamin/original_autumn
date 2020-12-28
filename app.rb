@@ -50,8 +50,8 @@ end
 
 get  '/:id/chat' do
   @content = Board.find(params[:id])
-  @chats = Chat.all.order('id desc')
-  @chats = Chat.all.order('id desc')
+  @chats = @content.chats.all.order('id asc')
+
   erb :chat
 end
 
@@ -227,11 +227,8 @@ end
 
 post '/:id/evaluate' do
   content = Board.find(params[:id])
-  puts current_user.point - 1
-  current_user.update_attribute(:point, current_user.point - 1 )
-  content.user.update_attribute(:point, content.user.point + 1)
-  content.user.evaluation = params[:evaluation]
-  content.save!
+
+
   content.destroy
   redirect '/'
 end
