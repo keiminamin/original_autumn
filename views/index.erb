@@ -27,9 +27,9 @@
 　    </div>
 
       <% unless current_user.qr_img.empty? %>
-			<div class="images">
-        <img class="line" src="<%= content.qr_img %> " height ="100px">
-			</div>
+
+        <img class="line2" src="<%= content.qr_img %> " height ="100px">
+
       <% end %>
       <div class="names">
 			  <p class=><%= content.user.name %></p>
@@ -59,9 +59,9 @@
 			</div>
 
       <% unless current_user.qr_img.empty? %>
-			<div class="images">
+
         <img class="line" src="<%= content.qr_img %> " height ="100px"> <br>
-			</div>
+
       <% end %>
 			<div class="names">
 			<p class= ""><%= content.user.name%></p>
@@ -74,7 +74,7 @@
 
         <input id="confirm" type="submit" value="Confirm" name ="evaluation">
 				<label for="confirm">
-				  <div class="confirm">
+				  <div class="comp">
 					  confirm
 					</div>
 				</label>

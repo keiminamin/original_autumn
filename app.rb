@@ -5,10 +5,16 @@ require 'sinatra/reloader' if development?
 require 'sinatra/activerecord'
 require './models'
 require 'pry'
-
+require  'request'
 
 enable :sessions
 before do
+    unless current_user.present?
+    if request.path_info == '/'and request.path_info ==  '/signin'and  request.path_info ==  '/signup'
+      redirect '/'
+    end
+
+  end
   Dotenv.load
   Cloudinary.config do |config|
     config.cloud_name = ENV['CLOUD_NAME']
@@ -30,6 +36,8 @@ get '/' do
   @contents = Board.all.order('id desc')
   @groups = Group.all.order( 'id desc')
   @chats = Chat.all.order('id desc')
+
+
 
   # @usergroups = Usergroup.all.order( 'id desc')
 
@@ -228,6 +236,7 @@ end
 post '/:id/evaluate' do
   content = Board.find(params[:id])
 
+  content.like = 1
 
   content.destroy
   redirect '/'

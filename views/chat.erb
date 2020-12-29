@@ -28,26 +28,21 @@
 
 
 
-  <% if @chats.find_by(user_id: @content.user_id).present? %>
-
-
-      <h3 class="chat_name">
-      <%= User.find_by(id: @content.user_id).name %>
-      </h3>
-
-
-
-
-  <% elsif @chats.find_by(user_id: @content.custome_id).present? %>
-
-
-      <h3 class="chat_name">
-      <%= User.find_by(id: @content.custome_id).name %>
-      </h3>
-
-
-
+<% if @chats.where.not(user_id: current_user.id).present? %>
+  <% if current_user.id == @content.user_id %>
+            <h3 class="chat_name">
+              <%= User.find_by(id: @content.custome_id).name %>
+            </h3>
+        <% elsif current_user.id == @content.custome_id  %>
+            <h3 class="chat_name">
+              <%= User.find_by(id: @content.user_id).name %>
+            </h3>
   <% end %>
+
+        <% @chats.where.not(user_id: current_user.id).each.each do |chat| %>
+            <li class= "aite"><p class="comment"><%= chat.message %> </p></li>
+        <% end %>
+<% end %>
 
 
   <% @chats.each do |chat| %>
