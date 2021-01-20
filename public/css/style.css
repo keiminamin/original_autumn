@@ -9,6 +9,11 @@
 
  }
 
+ i.fas {
+   color: #5b99f4;
+
+
+ }
 
 
  .back {
@@ -136,6 +141,26 @@
 
  }
 
+ .mytitle5 {
+   font-size: 30px;
+
+   color: #4D5359;
+   padding-top: 4vh;
+   padding-left: 43vw;
+   margin-bottom: 30px;
+
+
+ }
+
+ .mytitle5::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f007";
+   color: #4D5359;
+   font-weight: 900;
+   padding-right: 40px;
+   font-size: 25px;
+ }
+
  .mytitle2 {
    text-align: center;
    font-size: 40px;
@@ -145,12 +170,117 @@
 
  }
 
+ .mytitle8 {
+   font-size: 30px;
+
+   color: #4D5359;
+   padding-top: 4vh;
+   padding-left: 66vw;
 
 
- .secondtitle {
-   text-align: center;
+ }
+
+ .mytitle8::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f0c0";
+   color: #5b99f4;
+   font-weight: 900;
+   padding-right: 40px;
+   font-size: 25px;
+ }
+
+ .mytitle9 {
+   color: #4D5359;
+   font-size: 19px;
+   margin-bottom: 24px;
+ }
+
+ .mytitle9::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f521";
+   color: #5b99f4;
+   font-weight: 900;
+   padding-right: 20px;
+   font-size: 25px;
+ }
+
+
+
+
+
+
+
+ .ranking {
+   padding-left: 72vw;
+   margin-top: 5vh;
+ }
+
+ .rank {
+   margin: 5px;
+   padding-left: 18px;
    color: #4D5359;
  }
+
+
+
+
+
+
+ .secondtitle1 {
+   text-align: center;
+   color: #4D5359;
+   font-size: 15px;
+   margin-bottom: 20px;
+
+ }
+
+ .secondtitle1::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f0c0";
+   color: #5b99f4;
+   font-weight: 900;
+   padding-right: 20px;
+   font-size: 25px;
+ }
+
+
+ .secondtitle2 {
+   text-align: center;
+   color: #4D5359;
+   font-size: 15px;
+   margin-bottom: 20px;
+
+ }
+
+ .secondtitle2::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f0f3";
+   color: #5b99f4;
+   font-weight: 900;
+   padding-right: 20px;
+   font-size: 25px;
+ }
+
+
+
+
+ .thirdtitle {
+   text-align: center;
+   color: #4D5359;
+   margin-bottom: 70px;
+   margin-top: 5vh;
+   font-size: 29px;
+ }
+
+ h2.thirdtitle::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f5ae";
+   color: #5b99f4;
+   font-weight: 900;
+   padding-right: 40px;
+   font-size: 25px;
+ }
+
 
  .submit-btn {
    display: block;
@@ -274,6 +404,15 @@
 
  }
 
+ .point_script {
+   color: #fafafa;
+   overflow: hidden;
+
+   padding-left: 25px;
+   padding-top: 15px;
+
+ }
+
  .group1 {
    color: #fafafa;
 
@@ -316,17 +455,43 @@
 
  .group_links {
    height: 20vh;
-
+   width: 30%;
    overflow: hidden;
+   padding-left: 3vw;
 
  }
 
+ .informed {
+   width: 30%;
+   height: 20vh;
+ }
+
+ .header {
+   padding-left: 30vw;
+ }
+
+ .header_info {
+   display: flex;
+   justify-content: center;
+ }
+
  .group_link {
-   margin-top: 40px;
+
    color: #4D5359;
    float: left;
-   margin-left: 200px;
+   margin-left: 49px;
+   margin-bottom: 10px;
    transition: 0.3s;
+
+ }
+
+ .group_link2 {
+
+   color: #4D5359;
+   float: left;
+   margin-left: 30px;
+
+
  }
 
  .group_link:hover {
@@ -334,18 +499,55 @@
    border-bottom: solid #5b99f4 1px;
  }
 
- .url {
+ .url5 {
    display: inline-block;
    margin-left: 30px;
    font-size: 20px;
  }
 
+ .url5::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f19d";
+   color: #EF8A17;
+   font-weight: 900;
+   padding-right: 15px;
+   font-size: 20px;
+ }
+
+ .url6 {
+   display: inline-block;
+   margin-left: 30px;
+   font-size: 20px;
+ }
+
+ .url6::before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f2f5";
+   color: #E0479E;
+   font-weight: 900;
+   padding-right: 15px;
+   font-size: 20px;
+
+ }
+
+
+ .url2 {
+   display: inline-block;
+   margin-left: -72px;
+   font-size: 20px;
+   color: #4D5359;
+ }
+
  .urls {
    display: flex;
-   margin-left: 38vw;
+   margin-left: 66vw;
  }
 
  #edit {
+   display: none;
+ }
+
+ #offer {
    display: none;
  }
 
@@ -359,6 +561,8 @@
    margin-top: 20px;
    overflow: hidden;
    float: left;
+   margin-bottom: 20px;
+
  }
 
  .head {
@@ -486,7 +690,7 @@
      rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
    margin-left: 50px;
-   margin-top: 30px;
+
 
    float: left;
    margin-bottom: 100px;
@@ -663,6 +867,26 @@
    justify-content: center;
    margin-top: 5vh;
  }
+
+ /* .menu li.menu__single {
+   position: relative;
+ }
+
+ li.menu__single ul.menu__ti-level {
+   position: absolute;
+   top: 40px;
+   width: 100%;
+   background: #072A24;
+   -webkit-transition: all .2s ease;
+   transition: all .2s ease;
+ }
+
+ li.menu__single:hover ul.menu__second-level {
+   top: 50px;
+   visibility: visible;
+   opacity: 1;
+ } */
+
 
  /* label:after {
    content: "選択されていません";

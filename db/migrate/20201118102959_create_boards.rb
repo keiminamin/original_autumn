@@ -11,6 +11,8 @@ class CreateBoards < ActiveRecord::Migration[5.2]
       t.integer :track_id
       t.integer :like, default: 0
       t.timestamps null: false
+      t.date :confirm_date
+
     end
   end
 end

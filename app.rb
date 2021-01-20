@@ -1,7 +1,6 @@
 require 'bundler/setup'
 Bundler.require
 require 'sinatra/reloader' if development?
-
 require 'sinatra/activerecord'
 require './models'
 require 'pry'
@@ -145,6 +144,10 @@ post '/groupup' do
 end
 get '/group/:id' do
   @group = Group.find(params[:id])
+
+  @ranks = @group.users.all.order('point desc').limit(3)
+
+
   @contents = Board.all.order('id desc')
 
 
@@ -235,9 +238,12 @@ end
 
 post '/:id/evaluate' do
   content = Board.find(params[:id])
+  puts current_user.point - 1
+  current_user.update_attribute(:point, current_user.point - 2 )
+  content.user.update_attribute(:point, content.user.point + 2)
+  # content.user.evaluation = params[:evaluation]
+  content.confirm_date = Date.today
+  content.save!
 
-  content.like = 1
-
-  content.destroy
   redirect '/'
 end

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_12_27_015850) do
     t.integer "like", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "confirm_date"
     t.index ["group_id"], name: "index_boards_on_group_id"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end

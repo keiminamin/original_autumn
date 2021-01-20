@@ -1,25 +1,54 @@
 <% if !current_user.nil? %>
-
-  <h1 class="mytitle">My page</h1>
+<div class="header">
+  <h1 class="mytitle5">My page</h1>
+<div class="header_info">
 	<div class="group_links">
-	<h2 class="secondtitle">所属グループ</h2>
-	<% @groups.each do |group|%>
 
-	 <% if group.usergroups.find_by(user_id: current_user.id).present?  %>
+	<h3 class="secondtitle1">所属グループ</h3>
 
-  <div group10>
-   <li class="group_link"><a class ="jump" href ="/group/<%= group.id %>"><%= group.group_name  %>グループへ</a></li>
-	 </div>
-	 <% end %>
-	<% end %>
+	   <% @groups.each do |group|%>
+　
+	    <% if group.usergroups.find_by(user_id: current_user.id).present?  %>
+
+        <%# <div group10> %>
+          <li class="group_link"><a class ="jump" href ="/group/<%= group.id %>"><%= group.group_name  %>グループへ</a></li>
+	       <%# </div> %>
+	    <% end %>
+	  <% end %>
+
 	</div>
-	<h2 class="secondtitle">依頼リスト</h2>
+	<div class="informed">
+
+	<h3 class="secondtitle2">通知</h3>
+	<% @contents.each do |content| %>
+
+	  <% if content.confirm_date.present? %>
+    	<% if (Date.today - content.confirm_date).to_i < 3 %>
+	      <% if content.user.id == current_user.id %>
+	      <li class="group_link2"><%= User.find_by(id: content.custome_id).name %>さんとの取引が終わりました。</li>
+	  	  <% end %>
+    	<% end %>
+    <% if (Date.today - content.confirm_date).to_i < 3  %>
+		  <% if content.custome_id == current_user.id %>
+	    	<li class="group_link2"> <%= User.find_by(id: content.user.id).name %>さんとの取引が終わりました。</li>
+		  <% end %>
+    <% end %>
+	<% end %>
+
+	<% end %>
+
+	</div>
+
+	</div>
+	</div>
+	<h2 class="thirdtitle">依頼リスト</h2>
 
 	<% @contents.each do |content|%>
 
 	  <% if !content.custome_id.nil? %>
 
     <% if content.user.id == current_user.id %>
+		<% if content.confirm_date.nil?%>
 		<div class="trade">
 　　  <div class="trade_head">
       <h2 class="subject2"><%= content.board_title %></h2>
@@ -50,8 +79,10 @@
     <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
 		</div>
+		<% end %>
     <% end %>
 		<% if content.custome_id == current_user.id %>
+		<% if content.confirm_date.nil?%>
 	  <div class="trade">
     <div class="trade_head">
       <h2 class="subject"><%= content.board_title %></h2>
@@ -83,6 +114,7 @@
 <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
 		</div>
+		<% end %>
     <% end %>
 
   <% end %>
