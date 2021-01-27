@@ -868,6 +868,10 @@
    margin-top: 5vh;
  }
 
+ .mobile_title {
+   display: none;
+ }
+
  /* .menu li.menu__single {
    position: relative;
  }

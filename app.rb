@@ -9,8 +9,11 @@ require  'request'
 enable :sessions
 before do
     unless current_user.present?
-    if request.path_info == '/'and request.path_info ==  '/signin'and  request.path_info ==  '/signup'
+    unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'
+
+
       redirect '/'
+
     end
 
   end
