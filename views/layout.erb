@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/mobile_style.css" media="screen and (max-width: 1024px)">
   <link rel="stylesheet" href="/css/style.css" media="screen and (min-width: 1025px)">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
   <title>Share Board</title>
 </head>
 <body>
@@ -61,6 +62,8 @@
 <%= yield %>
 
 
+
+
 <script>
   $(document).on("click","like_button",function() {
 		var id = $(this).data("id");
@@ -76,5 +79,7 @@
 	});
 
 </script>
+
+
 </body>
 </html>

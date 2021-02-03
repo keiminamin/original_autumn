@@ -10,7 +10,8 @@ require 'line/bot'
 enable :sessions
 before do
     unless current_user.present?
-    unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'  or request.path_info ==  '/callback'
+    unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'  or request.path_info ==  '/callback' or
+    request.path_info ==  '/confirm'
 
 
       redirect '/'
@@ -261,7 +262,7 @@ end
 post '/callback' do
 
   body = request.body.read
-
+  puts "a"
   signature = request.env['HTTP_X_LINE_SIGNATURE']
   unless client.validate_signature(body, signature)
     error 400 do 'Bad Request' end
