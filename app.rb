@@ -10,7 +10,7 @@ require 'line/bot'
 enable :sessions
 before do
     unless current_user.present?
-    unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'
+    unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'  or request.path_info ==  '/callback'
 
 
       redirect '/'
@@ -259,7 +259,7 @@ post '/:id/evaluate' do
 end
 
 post '/callback' do
-  puts "a"
+
   body = request.body.read
 
   signature = request.env['HTTP_X_LINE_SIGNATURE']
