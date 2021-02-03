@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :password_digest
       t.string :qr_img
+      t.text :line_id
       t.integer :evaluation, default: 10
       t.integer :point, default:  10
       t.timestamps null: false

@@ -17,6 +17,7 @@ gem 'dotenv'
 gem 'cloudinary'
 gem  'pry'
 gem   'request'
+gem 'line-bot-api'
 group :development do
   gem 'sqlite3','1.4.1'
 end

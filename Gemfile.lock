@@ -42,6 +42,7 @@ GEM
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    line-bot-api (1.18.0)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (1.0.0)
@@ -128,6 +129,7 @@ DEPENDENCIES
   debase
   dotenv
   fastri
+  line-bot-api
   pg (= 0.21.0)
   pry
   rake
