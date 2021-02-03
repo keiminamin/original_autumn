@@ -259,6 +259,7 @@ post '/:id/evaluate' do
 end
 
 post '/callback' do
+  puts "a"
   body = request.body.read
 
   signature = request.env['HTTP_X_LINE_SIGNATURE']
@@ -279,7 +280,7 @@ post '/callback' do
 
     when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
       userid = event['source']['userId']
-      user = User.find_by(userId: userid)
+      user = User.find_by(line_id: userid)
       user.destroy
     end
 
