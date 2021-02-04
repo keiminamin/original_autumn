@@ -11,7 +11,7 @@ enable :sessions
 before do
     unless current_user.present?
     unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'  or request.path_info ==  '/callback' or
-    request.path_info ==  "/:userid/confirm"
+    request.path_info ==  "/U7852d2b3ee71aa7c8d18a5c39ef885b2/confirm"
 
 
       redirect '/'
