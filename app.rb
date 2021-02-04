@@ -11,7 +11,7 @@ enable :sessions
 before do
     unless current_user.present?
     unless request.path_info == '/'or request.path_info ==  '/signin' or  request.path_info ==  '/signup'  or request.path_info ==  '/callback' or
-    request.path_info ==  "/confirm"
+    request.path_info ==  "/:userid/confirm"
 
 
       redirect '/'
@@ -65,6 +65,7 @@ end
 #   puts "a"
 #   content.like.to_s
 # end
+
 
 get  '/:id/chat' do
   @content = Board.find(params[:id])
