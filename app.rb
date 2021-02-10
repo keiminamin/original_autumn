@@ -208,7 +208,6 @@ post '/group/:id/post' do
 
     users = @group.users.all
     users.each do |user|
-　
       userid = user.line_id
   message = { type: 'text', text: "グループに依頼が投稿されました。確認してみましょう
     https://shareboards-0512.herokuapp.com/" }
