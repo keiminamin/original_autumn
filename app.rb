@@ -260,6 +260,13 @@ post '/:id/done' do
   content = Board.find(params[:id])
   content.complete = true
   content.save
+
+  userid = User.find_by(id: content.custome_id).line_id
+  message = { type: 'text', text: "#{userid.name}さんの依頼が受け付けられました。
+    https://shareboards-0512.herokuapp.com/" }
+
+      client.push_message(userid, message)
+
   redirect '/'
 end
 
