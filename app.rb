@@ -226,7 +226,7 @@ post '/group/:id/:post_id/offer' do
     board.save!
 
       userid = User.find_by(id: board.user_id).line_id
-  message = { type: 'text', text: "グループに依頼が投稿されました。確認してみましょう
+  message = { type: 'text', text: "#{userid.name}さんの依頼が受け付けられました。
     https://shareboards-0512.herokuapp.com/" }
 
       client.push_message(userid, message)
