@@ -261,8 +261,8 @@ post '/:id/done' do
   content.complete = true
   content.save
 
-  userid = User.find_by(id: content.custome_id).line_id
-  message = { type: 'text', text: "#{User.find_by(id: content.user_id).name}さんの作業が完了しました。確認してみましょう
+  userid = User.find_by(id: content.user_id).line_id
+  message = { type: 'text', text: "#{User.find_by(id: content.custome_id).name}さんの作業が完了しました。確認してみましょう
     https://shareboards-0512.herokuapp.com/" }
 
       client.push_message(userid, message)
