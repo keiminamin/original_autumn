@@ -206,6 +206,15 @@ post '/group/:id/post' do
   @group = Group.find(params[:id])
     Board.create( {board_title: params[:board_title],board_content: params[:board_content],user_id: current_user.id, group_id:@group.id})
 
+    users = User.all
+    users.each do |user|
+　
+      userid = user.find_by(id: @group.usergroups.user_id).line_id
+  message = { type: 'text', text: "グループに依頼が投稿されました。確認してみましょう
+    https://shareboards-0512.herokuapp.com/" }
+
+      client.push_message(userid, message)
+    end
 
   redirect "/group/#{@group.id}"
 end
