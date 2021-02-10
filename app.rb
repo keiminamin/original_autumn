@@ -226,7 +226,7 @@ post '/group/:id/:post_id/offer' do
     board.save!
 
       userid = User.find_by(id: board.user_id).line_id
-  message = { type: 'text', text: "#{userid.name}さんの依頼が受け付けられました。
+  message = { type: 'text', text: "#{board.user.name}さんの依頼が受け付けられました。
     https://shareboards-0512.herokuapp.com/" }
 
       client.push_message(userid, message)
@@ -262,7 +262,7 @@ post '/:id/done' do
   content.save
 
   userid = User.find_by(id: content.custome_id).line_id
-  message = { type: 'text', text: "#{userid.name}さんの依頼が受け付けられました。
+  message = { type: 'text', text: "#{User.find_by(id: content.custome_id).name}さんの作業が完了しました。確認してみましょう
     https://shareboards-0512.herokuapp.com/" }
 
       client.push_message(userid, message)
