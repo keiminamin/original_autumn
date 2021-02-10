@@ -224,6 +224,13 @@ post '/group/:id/:post_id/offer' do
     board.custome_id = current_user.id
     board.qr_img    = current_user.qr_img
     board.save!
+
+      userid = User.find_by(id: board.user_id).line_id
+  message = { type: 'text', text: "グループに依頼が投稿されました。確認してみましょう
+    https://shareboards-0512.herokuapp.com/" }
+
+      client.push_message(userid, message)
+
     redirect "/"
 
 end
