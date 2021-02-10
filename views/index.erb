@@ -29,7 +29,7 @@
 	      <li class="group_link2"><%= User.find_by(id: content.custome_id).name %>さんとの取引が終わりました。</li>
 	  	  <% end %>
     	<% end %>
-    <% if (Date.today - content.confirm_date).to_i < 3  %>
+    <% if (Date.today - content.confirm_date).to_i < 1  %>
 		  <% if content.custome_id == current_user.id %>
 	    	<li class="group_link2"> <%= User.find_by(id: content.user.id).name %>さんとの取引が終わりました。</li>
 		  <% end %>
