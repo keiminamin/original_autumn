@@ -278,7 +278,7 @@ post '/:id/evaluate' do
   # content.user.evaluation = params[:evaluation]
   content.confirm_date = Date.today
   content.save!
-  userid = User.find_by(id: content.user_id).line_id
+  userid = User.find_by(id: content.custome_id).line_id
   message = { type: 'text', text: "#{User.find_by(id: content.user_id).name}さんが確認しました。これで取引完了です
     https://shareboards-0512.herokuapp.com/" }
   redirect '/'
