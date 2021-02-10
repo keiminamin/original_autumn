@@ -77,6 +77,17 @@
 				</label>
         </form>
 			<% end %>
+
+			<% else %>
+			  <form action="/<%=content.id%>/evaluate" method="post">
+
+        <input id="confirm" type="submit" value="Confirm" name ="evaluation">
+				<label for="confirm">
+				  <div class="comp">
+					  confirm
+					</div>
+				</label>
+        </form>
     <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
 		</div>
