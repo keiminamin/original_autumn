@@ -28,7 +28,7 @@
         <div>
           <div class="content">
           <% unless content.user.id == current_user.id %>
-            < action="/group/<%= @group.id %>/<%= content.id %>/offer" method="post">
+            <form action="/group/<%= @group.id %>/<%= content.id %>/offer" method="post">
 
             <input class="edit" id="offer" type="submit" value="申請">
             <label class="head2" for="offer">
@@ -38,32 +38,14 @@
     </div></label>
        </form>
     <% else %>
-
-    <a href="#modal-01">
-
-
+    <form action="/group/<%= @group.id %>/<%= content.id %>/edit">
+    <input class="edit" id="edit" type="submit" value="編集">
+    <label class="head2" for="edit">
     <div class="head">
       <p class="pen">Share Board</p><br>
       <p class="edit_name">Edit</p>
-    </div>
-    </a>
-
-   <div class="modal-wrapper" id="#modal-01">
-  <a href="#!" class="modal-overlay"></a>
-  <div class="modal-window">
-    <div class="modal-content">
-      <form action="/group/<%= @group.id %>/<%= content.id %>/edit">
-    <input class="edit" id="edit" type="submit" value="編集">
-    <label class="head2" for="edit">
-
-    </label>
+    </div></label>
     </form>
-    </div>
-    <a href="#!" class="modal-close">×</a>
-  </div>
-</div>
-
-
   <% end %>
    <p class="content_name"><%= content.user.name %>さん</p>
       <div class="scription">
