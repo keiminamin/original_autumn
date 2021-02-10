@@ -262,7 +262,7 @@ post '/:id/done' do
   content.save
 
   userid = User.find_by(id: content.custome_id).line_id
-  message = { type: 'text', text: "#{User.find_by(id: content.custome_id).name}さんの作業が完了しました。確認してみましょう
+  message = { type: 'text', text: "#{User.find_by(id: content.user_id).name}さんの作業が完了しました。確認してみましょう
     https://shareboards-0512.herokuapp.com/" }
 
       client.push_message(userid, message)
@@ -278,7 +278,9 @@ post '/:id/evaluate' do
   # content.user.evaluation = params[:evaluation]
   content.confirm_date = Date.today
   content.save!
-
+  userid = User.find_by(id: content.user_id).line_id
+  message = { type: 'text', text: "#{User.find_by(id: content.user_id).name}さんの作業が完了しました。確認してみましょう
+    https://shareboards-0512.herokuapp.com/" }
   redirect '/'
 end
 
