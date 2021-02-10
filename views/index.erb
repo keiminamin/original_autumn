@@ -65,17 +65,17 @@
 			  <p class=><%= content.user.name %></p>
       </div>
 			<% unless content.complete?%>
-        <form action="/<%= content.id %>/done" method="post">
-				  <input id="complete" type="submit" value="完了">
-          <label for="complete">
-					  <div class="comp">
-              Finish
-						</div>
-					</label>
-
-				</form>
+        <p class="content_script2">ただいま作業中です</p>
 			<% else %>
-			  <p class="content_script2">確認まち</p>
+			  <form action="/<%=content.id%>/evaluate" method="post">
+
+        <input id="confirm" type="submit" value="Confirm" name ="evaluation">
+				<label for="confirm">
+				  <div class="comp">
+					  confirm
+					</div>
+				</label>
+        </form>
 			<% end %>
     <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
@@ -100,17 +100,18 @@
 			</div>
 
 			<% unless content.complete?%>
-        <p class="content_script2">ただいま作業中です</p>
-			<% else %>
-　　　　　<form action="/<%=content.id%>/evaluate" method="post">
 
-        <input id="confirm" type="submit" value="Confirm" name ="evaluation">
-				<label for="confirm">
-				  <div class="comp">
-					  confirm
-					</div>
-				</label>
-        </form>
+				<form action="/<%= content.id %>/done" method="post">
+				  <input id="complete" type="submit" value="完了">
+          <label for="complete">
+					  <div class="comp">
+              Finish
+						</div>
+					</label>
+
+				</form>
+			<% else %>
+				<p class="content_script2">確認まち</p>
 			<% end %>
 <a class="chat_link" href="/<%=content.id %>/chat">chat
     </a>
