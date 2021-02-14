@@ -881,3 +881,10 @@ label input {
   justify-content: center;
   margin-top: 5vh;
 }
+
+
+.success {
+
+  margin-top: 30px;
+  color: #4D5359;
+}
