@@ -50,11 +50,11 @@ i.fas {
 
 .link {
   margin: 20px;
-
+  font-size: 28px;
   background: #fafafa;
   padding: 10px;
   /* border-bottom: solid 1px #5b99f4; */
-
+  color: #4D5359;
   transition-duration: 0.3s;
   transition-property: border-bottm;
 
