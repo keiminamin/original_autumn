@@ -812,30 +812,31 @@
    background-image: url("/img/chat.png");
    height: 10vh;
    background-size: cover;
-   width: 30vh;
+
    text-align: center;
    color: #4D5359;
    margin: 0 auto;
    margin-bottom: 10vh;
-   padding: 2px;
+   padding: 35px;
  }
 
  .comment {
 
    font-size: 15px;
    padding-top: 22px;
+   overflow: hidden;
  }
 
  .aite {
    background-image: url("/img/chat.png");
    height: 10vh;
    background-size: cover;
-   width: 30vh;
+
    text-align: center;
    color: #4D5359;
    margin: 0 auto;
    margin-bottom: 10vh;
-   padding: 2px;
+   padding: 35px;
 
  }
 
@@ -944,6 +945,22 @@
 
  .modal-wrapper .modal-close:hover {
    color: #2b2e38 !important
+ }
+
+ .codes {
+   display: flex;
+   justify-content: center;
+ }
+
+ .mytitle10 {
+
+   color: #4D5359;
+   text-align: center;
+   margin-bottom: 5vh;
+ }
+
+ .code {
+   width: 25vw;
  }
 
  /* .menu li.menu__single {
