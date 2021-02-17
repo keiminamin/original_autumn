@@ -39,33 +39,13 @@
             </h3>
   <% end %>
 
-        <% @chats.where.not(user_id: current_user.id).each.each do |chat| %>
+        <% @chats.where.not(user_id: current_user.id).each do |chat| %>
             <li class= "aite"><p class="comment"><%= chat.message %> </p></li>
         <% end %>
 <% end %>
 
 
-  <% @chats.each do |chat| %>
-    <% unless chat.user_id == current_user.id %>
-      <% if chat.user_id == @content.user_id %>
-
-
-          <li class="aite"> <p class="comment"><%= chat.message %></p></li>
-
-
-
-      <% elsif chat.user_id == @content.custome_id %>
-
-
-
-          <li class= "aite"><p class="comment"><%= chat.message %> </p></li>
-
-
-
-
-      <% end %>
-    <% end %>
-  <% end %>
+  <%#  %>
 </div>
 <% end %>
 </div>
