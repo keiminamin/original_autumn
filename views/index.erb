@@ -20,7 +20,10 @@
 	<div class="informed">
 
 	<h3 class="secondtitle2">通知</h3>
+   <% if current_user.line_id.nil? %>
 
+	 <a class="group_link2" href="/qr"> LINE BOTはこちらから</a>
+	<% end %>
 	<% @contents.each do |content| %>
 
 	  <% if content.confirm_date.present? %>
