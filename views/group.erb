@@ -7,11 +7,13 @@
      <div class="urls">
 
       <% if current_user.point > 0  %>
+<div class="urls_mobile">
       <a class="url5" href="/group/<%= @group.id %>/post" >依頼</a>
       <% else %>
       <p class="url6">依頼サービスは使えません</p>
       <% end %>
        <a  class="url6" href="/groupout">Topへ</a>
+      </div>
       </div>
     <div class="ranking">
     <h2 class="mytitle9">グループランキング</h2>
